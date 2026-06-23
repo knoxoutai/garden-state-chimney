@@ -158,9 +158,11 @@ figure img { width: 100%; height: auto; max-height: 320px; object-fit: contain; 
 .gallery { display:grid; grid-template-columns: repeat(4,1fr); gap:14px; }
 .gallery img { height: 180px; width:100%; object-fit: cover; object-position: center; border-radius: 8px; box-shadow: var(--shadow); transition: transform .25s; }
 .gallery img:hover { transform: scale(1.03); }
-/* Keep the subject's head in frame for these two portrait gallery photos */
-.gallery img.g-roof { object-position: 75% 28%; }
-.gallery img.g-window { object-position: center 22%; }
+/* Show the FULL photo for these two portrait shots (no cropping) */
+.gallery img.g-roof, .gallery img.g-window {
+  object-fit: contain;
+  background: var(--mist-2);
+}
 
 /* ---------- Breadcrumb / page hero ---------- */
 .page-hero { background: var(--ink); color:#fff; position:relative; overflow:hidden; }
